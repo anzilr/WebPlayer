@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPlayer for SubEditBot</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <p id="subtitle_id" style="display:none;">{{ subtitle_id }}</p>
+    <p id="index" style="display:none;">{{ index }}</p>
+    <div id="loadingMessage" class="loading">Syncing subtitles...</div>
+    <div class="player-wrapper">
+        <div class="main-container">
+            <div id="videoContainer">
+                <video controls playsinline id="videoPlayer" controls></video>
+                <div id="subtitleDisplay" class="subtitle-display"></div>
+            </div>
+
+            <div class="controls">
+                <button id="chooseFileButton" class="icon-button"><i class="fas fa-file-video"></i>Video</button>
+                <button id="rewind" class="icon-button"><i class="fa-solid fa-rotate-left"></i>10s</button>
+                <button id="fastForward" class="icon-button"><i class="fa-solid fa-rotate-right"></i>10s</button>
+                <button id="syncSubtitlesButton" class="icon-button"><i class="fas fa-sync-alt"></i>Sync</button>
+                <button id="previousSubtitle" class="icon-button"><i class="fas fa-step-backward"></i>Previous</button>
+                <button id="nextSubtitle" class="icon-button"><i class="fas fa-step-forward"></i>Next</button>
+                <button id="playPauseButton" class="icon-button">
+                    <i class="fa fa-play"></i>Play
+                </button>
+                <button id="copyTimeButton" class="icon-button"><i class="fa-solid fa-clock"></i>Copy</button>
+                <button id="skipToSubtitleButton" class="icon-button"><i class="fa-solid fa-indent"></i>Skip</button>
+                
+                
+                <!-- <div class="volume-control">
+                    <label for="volume">Volume:</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.1">
+                </div> -->
+            </div>
+        </div>
+
+        <div id="subtitleList" class="subtitle-list"></div>
+        
+        <!-- Hidden popup for editing subtitles -->
+        <div id="editPopup" class="popup hidden">
+            <textarea id="editSubtitleText"></textarea>
+            <div class="popup-controls">
+            <button id="submitEditButton" class="icon-button">Submit</button>
+            <button id="closePopupButton" class="icon-button">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
