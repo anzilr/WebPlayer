@@ -12,7 +12,20 @@
 <body>
     <p id="subtitle_id" style="display:none;">{{ subtitle_id }}</p>
     <p id="index" style="display:none;">{{ index }}</p>
-    <div id="loadingMessage" class="loading">Syncing subtitles...</div>
+    <div id="loadingMessage" class="loading">
+        <div class="loading-content">
+            <img src="/static/Msone_Logo.png" alt="Loading" class="loading-image">
+            <div class="loading-dots">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+            </div>
+            <span id="loadingText"><span id="dots"></span></span>
+        </div>
+    </div>
+
+
+
     <div class="player-wrapper">
         <div class="main-container">
             <div id="videoContainer">
@@ -21,15 +34,13 @@
             </div>
 
             <div class="controls">
-                <button id="chooseFileButton" class="icon-button"><i class="fas fa-file-video"></i>Video</button>
                 <button id="rewind" class="icon-button"><i class="fa-solid fa-rotate-left"></i>10s</button>
+                <button id="playPauseButton" class="icon-button"><i class="fa fa-play"></i>Play</button>
                 <button id="fastForward" class="icon-button"><i class="fa-solid fa-rotate-right"></i>10s</button>
-                <button id="syncSubtitlesButton" class="icon-button"><i class="fas fa-sync-alt"></i>Sync</button>
                 <button id="previousSubtitle" class="icon-button"><i class="fas fa-step-backward"></i>Previous</button>
+                <button id="syncSubtitlesButton" class="icon-button"><i class="fas fa-sync-alt"></i>Sync</button>
                 <button id="nextSubtitle" class="icon-button"><i class="fas fa-step-forward"></i>Next</button>
-                <button id="playPauseButton" class="icon-button">
-                    <i class="fa fa-play"></i>Play
-                </button>
+                <button id="chooseFileButton" class="icon-button"><i class="fas fa-file-video"></i>Video</button>
                 <button id="copyTimeButton" class="icon-button"><i class="fa-solid fa-clock"></i>Copy</button>
                 <button id="skipToSubtitleButton" class="icon-button"><i class="fa-solid fa-indent"></i>Skip</button>
                 
@@ -52,7 +63,6 @@
             </div>
         </div>
     </div>
-    <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="/static/script.js"></script>
 </body>
 

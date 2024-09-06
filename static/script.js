@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const videoPlayer = document.getElementById('videoPlayer');
     const subtitleId = document.getElementById('subtitle_id').textContent.trim();
     const index = document.getElementById('index').textContent.trim();
-    const loadingMessage = document.getElementById('loadingMessage');
+    const loadingScreen = document.getElementById('loadingMessage');
     const subtitleList = document.getElementById('subtitleList');
     const chooseFileButton = document.getElementById('chooseFileButton');
     const volumeControl = document.getElementById('volume');
@@ -23,11 +23,26 @@ document.addEventListener('DOMContentLoaded', async function () {
     let subtitles = [];
 
     function showLoadingMessage() {
-        loadingMessage.style.display = 'flex';
+        const randomTexts = [
+            "Sorting out the subtitles",
+            "Finding the perfect sync",
+            "Just a moment, making it all line up",
+            "Putting the pieces together",
+            "Syncing magic in progress",
+            "Fine-tuning every frame",
+            "Almost there, aligning subtitles",
+            "Getting everything in sync",
+            "Loading the perfect timing",
+            "Tweaking the timing, stay tuned"
+        ];
+        const loadingMessage = document.getElementById('loadingText');
+        const randomMessage = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+        loadingMessage.innerHTML = randomMessage + '<span id="dots"></span>';
+        loadingScreen.style.display = 'flex';
     }
 
     function hideLoadingMessage() {
-        loadingMessage.style.display = 'none';
+        loadingScreen.style.display = 'none';
     }
 
     // Function to fetch subtitle data from the backend API
