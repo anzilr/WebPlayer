@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const subtitleItem = event.target.closest('.subtitle-list-item');
         if (subtitleItem) {
             touchTimer = setTimeout(function () {
-                const index = Array.from(subtitleList.children).indexOf(subtitleItem);
+                const index = Array.from(subtitleList.children).indexOf(subtitleItem)+1;
                 const currentText = subtitleItem.textContent.split(': ').slice(1).join(': '); // Extract text without index
                 showEditPopup(currentText, index);
             }, 800); // Adjust duration
